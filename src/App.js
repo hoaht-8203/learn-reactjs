@@ -64,8 +64,14 @@ function App() {
         {
           comments.filter((item) => {
             return item.content.toLowerCase().includes(text.toLowerCase())
-          }).map((item) => {
-            return (<DisplayTitle content={item.content} date={item.date} like={item.like}></DisplayTitle>)
+          }).map((item, index) => {
+            return (
+              <DisplayTitle 
+                key={index} 
+                content={item.content} 
+                date={item.date} 
+                like={item.like}/>
+            )
           })
         }
       </div>
